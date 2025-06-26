@@ -54,6 +54,9 @@ This project demonstrates a real-world enterprise-grade pipeline involving:
   - Filtering reviews based on scores and content
   - Identifying top-performing categories and subcategories
 
+<img width="962" alt="SQLQueries1" src="https://github.com/user-attachments/assets/eda1eb04-8c70-47d1-aaf2-ba14c0674bec" />
+
+
 ---
 
 ## 📊 Sample Business Insights
