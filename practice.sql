@@ -283,3 +283,4 @@ where a.patient_id is null
 (select admission_date, count(patient_id) as visits
  from admissions
  group by 1)
+
