@@ -1,4 +1,84 @@
-# SQL Practice from https://www.sql-practice.com/
+# ⭐ Yelp Reviews: Sentiment Analysis & SQL Challenge
+
+An end-to-end data engineering and analytics project that processes large-scale Yelp review data using AWS S3, Snowflake, and Python. This project showcases JSON flattening, cloud integration, and sentiment classification using Python UDFs inside Snowflake.
+
+---
+
+## 🚀 Project Overview
+
+This project demonstrates a real-world enterprise-grade pipeline involving:
+
+- ✅ Big data handling (5+ GB JSON)
+- ☁️ AWS S3 cloud storage
+- ❄️ Snowflake data warehousing
+- 🐍 Python UDFs for sentiment classification
+- 📊 SQL-based business insights from review data
+
+---
+
+## 🔧 Tech Stack
+
+| Tool             | Purpose                                     |
+|------------------|---------------------------------------------|
+| Python           | Preprocessing large JSON, scripting         |
+| AWS S3           | Cloud-based storage for intermediate files  |
+| Snowflake        | Data warehouse & SQL processing             |
+| Python UDFs      | Sentiment analysis within Snowflake         |
+| SQL (Snowflake)  | Data flattening and business querying       |
+| Jupyter Notebook | Exploratory scripting and orchestration     |
+
+---
+
+## 📂 Project Workflow
+
+### 1. JSON File Handling
+- Dealt with a **massive raw JSON** file (~5 GB)
+- Split into **manageable chunks** using Python to improve loading performance
+
+### 2. Upload to Cloud (S3)
+- Stored the split and cleaned files in an **AWS S3 bucket**
+- Enabled seamless Snowflake integration using external stage
+
+### 3. Snowflake Integration
+- Ingested the raw JSON into **variant columns**
+- Applied **FLATTEN** operations to convert nested objects into structured tabular format
+
+### 4. Sentiment Analysis with Python UDF
+- Created a **Snowflake Python UDF** that performs sentiment analysis on review text
+- Used a simple rule-based or pretrained model to classify reviews as **positive/negative**
+
+### 5. SQL Analysis & Reporting
+- Solved **~10 SQL challenges** involving:
+  - Ranking most-reviewed businesses
+  - Aggregating sentiment trends by city
+  - Filtering reviews based on scores and content
+  - Identifying top-performing categories and subcategories
+
+---
+
+## 📊 Sample Business Insights
+
+| Question                                 | Example Result                      |
+|------------------------------------------|-------------------------------------|
+| Top City by Positive Reviews             | Las Vegas                           |
+| Business with Most 5-Star Reviews        | "Joe’s Pizza"                       |
+| Category with Highest Sentiment Avg      | Spa & Wellness                      |
+| Negative Review Trend by Year            | Increasing from 2020 to 2022        |
+
+---
+
+## 💡 Key Takeaways
+
+- **Big Data Readiness**: Handled multi-GB JSON files through smart chunking  
+- **Cloud-Native Workflow**: Integrated AWS and Snowflake efficiently  
+- **Python in SQL**: Embedded UDFs for scalable sentiment analysis  
+- **Business Insights**: Used SQL to answer real-world analytical questions on user sentiment and business performance
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+# Some more SQL Practice from https://www.sql-practice.com/
 
 ## Schema 1
 ![image](https://github.com/user-attachments/assets/f3aa30a0-ce82-48e6-9a62-bdd88c193066)
@@ -40,9 +120,7 @@ select city, company_name, contact_name, "Suppliers" from suppliers
 group by 1, 2
 
 
-
-
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -284,142 +362,4 @@ where a.patient_id is null
  from admissions
  group by 1)
 
-
-
-# Yelp Dataset End to End implementation using AWS(S3) and Snowflake.
-
-🎯 1. Project Overview
-Domain: Yelp business reviews
-
-Scale: A large (~5 GB) raw JSON dataset
-
-Purpose: Build a full ETL pipeline to process review data, flatten it, and extract insights via sentiment analysis and SQL challenges 
-youtube.com
-+3
-linkedin.com
-+3
-t.me
-+3
-
-🚀 2. ETL Pipeline & Data Setup
-Python + AWS S3
-Initial Step: Use Python to split the large JSON into smaller, manageable files for performance.
-
-Upload: Transfer the cleaned JSON file chunks into an AWS S3 bucket
-
-Snowflake Ingestion & Flattening
-Data Loading: Store raw JSON in Snowflake variant columns.
-
-Flattening: Transform nested JSON data into relational tables for structured querying using Snowflake’s flatten or equivalent functions 
-t.me
-
-🤖 3. Python UDF for Sentiment Analysis
-User-Defined Function: Build a Python-based UDF inside Snowflake to perform sentiment analysis on review text.
-
-Goal: Classify reviews (e.g., positive/negative) for richer SQL-driven insights 
-linkedin.com
-
-📊 4. Business Reporting & SQL Challenge
-SQL Use‑Case: Solve ~10 medium‑to‑hard SQL questions using flattened and sentiment‑labeled tables—covering ranking, aggregations, classification, and analytical patterns.
-
-Outcome: Derive business-related insights from Yelp review data to showcase analytical depth (not covered here in detail) 
-linkedin.com
-
-
-| Section                 | Details                                                                                                      |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------ |
-| **Title & Scope**       | Yelp Reviews ETL & Sentiment Analytics                                                                       |
-| **Tech Stack**          | Python, AWS S3, Snowflake, Python UDFs, SQL                                                                  |
-| **Workflow**            | Data splitting → Upload to S3 → Snowflake ingestion & flattening → Sentiment UDF → SQL-based insights        |
-| **Business Insights**   | Sentiment trends, review volume by location, top-rated businesses, etc.                                      |
-| **Skills Demonstrated** | Big‑file handling, cloud storage integration, JSON flattening, user‑defined functions, advanced SQL analysis |
-
-
-
-# ⭐ Yelp Reviews: Sentiment Analysis & SQL Challenge
-
-An end-to-end data engineering and analytics project that processes large-scale Yelp review data using AWS S3, Snowflake, and Python. This project showcases JSON flattening, cloud integration, and sentiment classification using Python UDFs inside Snowflake.
-
----
-
-## 🚀 Project Overview
-
-This project demonstrates a real-world enterprise-grade pipeline involving:
-
-- ✅ Big data handling (5+ GB JSON)
-- ☁️ AWS S3 cloud storage
-- ❄️ Snowflake data warehousing
-- 🐍 Python UDFs for sentiment classification
-- 📊 SQL-based business insights from review data
-
----
-
-## 🔧 Tech Stack
-
-| Tool             | Purpose                                     |
-|------------------|---------------------------------------------|
-| Python           | Preprocessing large JSON, scripting         |
-| AWS S3           | Cloud-based storage for intermediate files  |
-| Snowflake        | Data warehouse & SQL processing             |
-| Python UDFs      | Sentiment analysis within Snowflake         |
-| SQL (Snowflake)  | Data flattening and business querying       |
-| Jupyter Notebook | Exploratory scripting and orchestration     |
-
----
-
-## 📂 Project Workflow
-
-### 1. JSON File Handling
-- Dealt with a **massive raw JSON** file (~5 GB)
-- Split into **manageable chunks** using Python to improve loading performance
-
-### 2. Upload to Cloud (S3)
-- Stored the split and cleaned files in an **AWS S3 bucket**
-- Enabled seamless Snowflake integration using external stage
-
-### 3. Snowflake Integration
-- Ingested the raw JSON into **variant columns**
-- Applied **FLATTEN** operations to convert nested objects into structured tabular format
-
-### 4. Sentiment Analysis with Python UDF
-- Created a **Snowflake Python UDF** that performs sentiment analysis on review text
-- Used a simple rule-based or pretrained model to classify reviews as **positive/negative**
-
-### 5. SQL Analysis & Reporting
-- Solved **~10 SQL challenges** involving:
-  - Ranking most-reviewed businesses
-  - Aggregating sentiment trends by city
-  - Filtering reviews based on scores and content
-  - Identifying top-performing categories and subcategories
-
----
-
-## 📊 Sample Business Insights
-
-| Question                                 | Example Result                      |
-|------------------------------------------|-------------------------------------|
-| Top City by Positive Reviews             | Las Vegas                           |
-| Business with Most 5-Star Reviews        | "Joe’s Pizza"                       |
-| Category with Highest Sentiment Avg      | Spa & Wellness                      |
-| Negative Review Trend by Year            | Increasing from 2020 to 2022        |
-
----
-
-## 💡 Key Takeaways
-
-- **Big Data Readiness**: Handled multi-GB JSON files through smart chunking  
-- **Cloud-Native Workflow**: Integrated AWS and Snowflake efficiently  
-- **Python in SQL**: Embedded UDFs for scalable sentiment analysis  
-- **Business Insights**: Used SQL to answer real-world analytical questions on user sentiment and business performance
-
----
-
-## 📁 Folder Structure
-
-├── data/ # Raw & split JSON files
-├── python_udf/ # Python code for sentiment analysis
-├── snowflake_scripts/ # SQL scripts for flattening & querying
-├── notebooks/ # End-to-end orchestration & EDA
-├── README.md # Project documentation
-└── requirements.txt # Python dependencies
 
