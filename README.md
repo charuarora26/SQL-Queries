@@ -35,17 +35,25 @@ This project demonstrates a real-world enterprise-grade pipeline involving:
 - Dealt with a **massive raw JSON** file (~5 GB)
 - Split into **manageable chunks** using Python to improve loading performance
 
+
 ### 2. Upload to Cloud (S3)
 - Stored the split and cleaned files in an **AWS S3 bucket**
 - Enabled seamless Snowflake integration using external stage
+
+- <img width="1674" alt="AWS" src="https://github.com/user-attachments/assets/07ddd50e-2f1f-4f81-8908-8a7b28d54f50" />
+
 
 ### 3. Snowflake Integration
 - Ingested the raw JSON into **variant columns**
 - Applied **FLATTEN** operations to convert nested objects into structured tabular format
 
+- 
+
 ### 4. Sentiment Analysis with Python UDF
 - Created a **Snowflake Python UDF** that performs sentiment analysis on review text
 - Used a simple rule-based or pretrained model to classify reviews as **positive/negative**
+
+- 
 
 ### 5. SQL Analysis & Reporting
 - Solved **~10 SQL challenges** involving:
@@ -56,6 +64,7 @@ This project demonstrates a real-world enterprise-grade pipeline involving:
 
 <img width="962" alt="SQLQueries1" src="https://github.com/user-attachments/assets/eda1eb04-8c70-47d1-aaf2-ba14c0674bec" />
 
+<img width="1919" alt="SQLQueries2" src="https://github.com/user-attachments/assets/922942ee-544a-4c76-acbf-620a5177bb70" />
 
 ---
 
