@@ -49,6 +49,10 @@ This project demonstrates a real-world enterprise-grade pipeline involving:
 - Ingested the raw JSON into **variant columns**
 - Applied **FLATTEN** operations to convert nested objects into structured tabular format
 
+<img width="498" alt="Reviews" src="https://github.com/user-attachments/assets/177f7bf6-8e63-46b7-ae48-45e9b8600436" />
+<img width="498" alt="Businesses" src="https://github.com/user-attachments/assets/05ff1a45-a9ba-4db7-b81c-40d11c43097f" />
+
+
 
 ### 4. Sentiment Analysis with Python UDF
 - Created a **Snowflake Python UDF** that performs sentiment analysis on review text
