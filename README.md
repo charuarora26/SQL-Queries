@@ -35,7 +35,7 @@ This project demonstrates a real-world enterprise-grade pipeline involving:
 - Dealt with a **massive raw JSON** file (~5 GB)
 - Split into **manageable chunks** using Python to improve loading performance
 
-- https://github.com/charuarora26/SQL-Queries/blob/main/Json%20File%20break.ipynb
+- [File Link with code for splitting the file](https://github.com/charuarora26/SQL-Queries/blob/main/Json%20File%20break.ipynb)
 
 
 ### 2. Upload to Cloud (S3)
