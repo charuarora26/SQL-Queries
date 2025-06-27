@@ -58,7 +58,7 @@ This project demonstrates a real-world enterprise-grade pipeline involving:
 
 
 ### 5. SQL Analysis & Reporting
-- Solved **~Some SQL challenges** involving:
+- Solved **Some SQL challenges** involving:
   - Ranking most-reviewed businesses
   - Aggregating sentiment trends by city
   - Filtering reviews based on scores and content
