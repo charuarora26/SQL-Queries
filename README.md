@@ -35,6 +35,85 @@ This project demonstrates a real-world enterprise-grade pipeline involving:
 - Dealt with a **massive raw JSON** file (~5 GB)
 - Split into **manageable chunks** using Python to improve loading performance
 
+- [Uploading Json File break.ipynb{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "4dc7324b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Total lines: 6990280, Lines oer file: 349514\n",
+      "JSON file successfully split into smaller parts\n"
+     ]
+    }
+   ],
+   "source": [
+    "import json\n",
+    "\n",
+    "input_file = \"yelp_academic_dataset_review.json\"\n",
+    "output_prefix = \"split_file_\"\n",
+    "num_files = 20\n",
+    "\n",
+    "with open(input_file, \"r\", encoding = \"utf8\") as f:\n",
+    "    total_lines = sum(1 for _ in f)\n",
+    "    \n",
+    "lines_per_file = total_lines // num_files\n",
+    "\n",
+    "print(f\"Total lines: {total_lines}, Lines oer file: {lines_per_file}\")\n",
+    "\n",
+    "with open(input_file, \"r\", encoding =\"utf8\") as f:\n",
+    "    for i in range (num_files):\n",
+    "        output_filename = f\"{output_prefix}{i+1}.json\"\n",
+    "        \n",
+    "        with open(output_filename, \"w\", encoding = \"utf8\") as out_file:\n",
+    "            for j in range(lines_per_file):\n",
+    "                line = f.readline()\n",
+    "                if not line:\n",
+    "                    break\n",
+    "                out_file.write(line)\n",
+    "print(\"JSON file successfully split into smaller parts\")\n",
+    "                "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f52a9995",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.13"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
+…]()
+
+
 
 ### 2. Upload to Cloud (S3)
 - Stored the split and cleaned files in an **AWS S3 bucket**
@@ -53,10 +132,11 @@ This project demonstrates a real-world enterprise-grade pipeline involving:
 - Created a **Snowflake Python UDF** that performs sentiment analysis on review text
 - Used a simple rule-based or pretrained model to classify reviews as **positive/negative**
 
-- 
+- <img width="843" alt="Sentiment" src="https://github.com/user-attachments/assets/19c05ed7-5e49-4a7b-9e49-7b30d44e0ec6" />
+
 
 ### 5. SQL Analysis & Reporting
-- Solved **~10 SQL challenges** involving:
+- Solved **~Some SQL challenges** involving:
   - Ranking most-reviewed businesses
   - Aggregating sentiment trends by city
   - Filtering reviews based on scores and content
